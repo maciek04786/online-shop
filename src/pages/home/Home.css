@@ -1,0 +1,24 @@
+.header {
+    max-width: 1400px;
+    font-size: 1.2em;
+    margin: 0 0;
+    text-align: center;
+    color: white;
+    height: 600px;
+    background-image: url(../../images/tamanna-rumee-eD1RNYzzUxc-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.heading {
+    position: relative;
+    top: 75%;
+    font-size: 3.5em;
+    line-height: 1.5;
+}
+
+.search-bar {
+    margin-left: 5% !important;
+    width: 250px !important;
+}

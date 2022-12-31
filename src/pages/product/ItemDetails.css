@@ -1,0 +1,7 @@
+.item-details-card {
+    max-width: 900px !important;
+}
+
+.item-details-card .btn {
+    float: right;
+}

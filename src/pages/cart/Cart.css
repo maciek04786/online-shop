@@ -1,0 +1,11 @@
+.shopping-cart .btn {
+    float: right;
+}
+
+.clear-btn {
+    position: absolute;
+}
+
+.cart-body {
+    max-width: 700px !important;
+}

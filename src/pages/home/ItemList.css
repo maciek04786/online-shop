@@ -1,0 +1,21 @@
+.item-list {
+    max-width: 1400px;
+    margin: 40px 40px 50px !important;
+}
+
+.item-list p {
+    font-size: 0.9em !important;
+}
+
+.item-card {
+    background-color: #F0E9D2 !important;
+    cursor: pointer;
+}
+
+.item-card:hover {
+    background-color: #E6DDC4 !important;
+}
+
+.item-card img {
+    max-height: 180px;
+}
