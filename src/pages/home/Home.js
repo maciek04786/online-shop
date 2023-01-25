@@ -17,8 +17,9 @@ export default function Home() {
   return (
     <div>
       <Container fluid className="mb-4 header">
-        <h1 className="heading">sellAnything.com</h1>
+        
       </Container>
+      <hr/>
       <Container className="my-5 search-bar">
         <Form className="d-flex">
           <Form.Control

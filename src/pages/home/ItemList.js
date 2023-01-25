@@ -11,7 +11,7 @@ export default function ItemList({ items }) {
   return (
     <Container className="item-list">
       {!items && <p>No items to show</p>}
-      <Row xs={2} md={3} lg={4} xl={5} className="g-4">
+      <Row xs={2} md={3} lg={4} xl={5} xxl={6} className="g-4">
         {items && (items.map((item) => (
           <Col key={item.id}>
             <Card
