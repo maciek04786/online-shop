@@ -28,7 +28,7 @@ export default function User() {
     <div>
       <Row>
         <Col sm={8}>
-        <h1 className="m-5">Your Items</h1>
+          <h1 className="m-5">Your Items</h1>
           {collError && <div className="error">{collError}</div>}
           {documents && <ItemList items={userItems} />}
         </Col>

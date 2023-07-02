@@ -4,11 +4,11 @@ import ItemList from './ItemList'
 
 // styles & bootstrap
 import "./Home.css"
-import { Container, Form } from 'react-bootstrap'
+import { Col, Container, Form, Image, Row } from 'react-bootstrap'
 
 export default function Home() {
   const [query, setQuery] = useState("")
-  const {documents, collError } = useCollection("items")
+  const { documents, collError } = useCollection("items")
 
   const items = documents ? documents.filter((item) => {
     return item.name.toLowerCase().match(query.toLowerCase())
@@ -16,15 +16,14 @@ export default function Home() {
 
   return (
     <div>
-      <Container fluid className="mb-4 header">
-        
+      <Container fluid className="heading">
+        <Image className="title-img" src={require("../../images/mike-petrucci-c9FQyqIECds-unsplash.jpg")} />
       </Container>
-      <hr/>
       <Container className="my-5 search-bar">
         <Form className="d-flex">
           <Form.Control
             type="search"
-            placeholder="Search"
+            placeholder="Filter"
             className="me-2"
             onChange={(e) => setQuery(e.target.value)}
           />

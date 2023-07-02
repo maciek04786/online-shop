@@ -17,6 +17,7 @@ import Checkout from './pages/checkout/Checkout';
 
 // components
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
 
 
@@ -27,42 +28,43 @@ function App() {
     <div className="App">
       {authIsReady && (
         <BrowserRouter>
-          <Container fluid className="p-0">
+          <Container fluid className="content p-0">
             <Navbar />
             <Routes>
-            <Route
-              path="/"
-              element={<Home />}
-            />
-            <Route
-              path="/login"
-              element={(!user && <Login />) || <Navigate to="/" />}
-            />
-            <Route
-              path="/item/:id"
-              element={<Item />}
-            />
-            <Route
-              path="/signup"
-              element={(!user && <Signup />) || <Navigate to="/" />}
-            />
-            <Route
-              path="/user/:id"
-              element={(user && <User />) || <Navigate to="/login" />}
-            />
-            <Route 
-              path="/cart"
-              element={<Cart />}
-            />
-            <Route
-              path="/checkout"
-              element={<Checkout />}
-            />
-            <Route
-              path="/sell"
-              element={(user && <Sell />) || <Navigate to="/login" />}
-            />
-          </Routes>
+              <Route
+                path="/"
+                element={<Home />}
+              />
+              <Route
+                path="/login"
+                element={(!user && <Login />) || <Navigate to="/" />}
+              />
+              <Route
+                path="/item/:id"
+                element={<Item />}
+              />
+              <Route
+                path="/signup"
+                element={(!user && <Signup />) || <Navigate to="/" />}
+              />
+              <Route
+                path="/user/:id"
+                element={(user && <User />) || <Navigate to="/login" />}
+              />
+              <Route
+                path="/cart"
+                element={<Cart />}
+              />
+              <Route
+                path="/checkout"
+                element={<Checkout />}
+              />
+              <Route
+                path="/sell"
+                element={(user && <Sell />) || <Navigate to="/login" />}
+              />
+            </Routes>
+            <Footer />
           </Container>
         </BrowserRouter>
       )}

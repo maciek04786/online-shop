@@ -1,29 +1,25 @@
-.header {
-    font-size: 1.2em;
-    text-align: center;
-    color: white;
-    height: 600px;
-    background-image: url(../../images/tamanna-rumee-eD1RNYzzUxc-unsplash.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
 .heading {
-    position: relative;
-    top: 65%;
-    font-size: 3.5em;
+    text-align: center;
+    object-fit: cover;
+    overflow: hidden;
+    margin: 5% auto;
     line-height: 1.5;
 }
 
 .search-bar {
-    margin-left: 5% !important;
+    margin: 5% !important;
     width: 250px !important;
 }
 
-hr {
-    margin: 3% auto;
-    border: 10px solid #580723;
-    border-radius: 5px;
-    width: 95%;
+.title {
+    font-size: 3rem !important;
+    color: #364F6B;
+    height: 250px;
+    bottom: 10px !important;
+    left: 20px;
+}
+
+.title-img {
+    max-width: 1400px;
+    width: 100%;
 }

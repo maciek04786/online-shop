@@ -1,15 +1,16 @@
 import { useLogout } from '../hooks/useLogout'
 import { useAuthContext } from '../hooks/useAuthContext'
-import { useNavigate } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 
 // styles & bootstrap
 import "./Navbar.css"
 import { Cart4 } from 'react-bootstrap-icons'
 
-import { Navbar, Nav, NavDropdown,
-        Container, Button,
-        Offcanvas
-      } from 'react-bootstrap'
+import {
+  Navbar, Nav, NavDropdown,
+  Container, Button,
+  Offcanvas
+} from 'react-bootstrap'
 
 export default function MyNavbar() {
   const { user } = useAuthContext()
@@ -46,6 +47,8 @@ export default function MyNavbar() {
                   <Nav.Link href="/signup">Signup</Nav.Link>
                 </>
               )}
+              <Nav.Link href="/about">About</Nav.Link>
+              <Nav.Link href="/contact">Contact</Nav.Link>
               {user && (
                 <>
                   <NavDropdown
@@ -68,7 +71,7 @@ export default function MyNavbar() {
         </Navbar.Offcanvas>
         <Button
           className="ms-4"
-          variant="dark" 
+          variant="dark"
           href="/cart"
         ><Cart4 color="white" /></Button>
       </Container>

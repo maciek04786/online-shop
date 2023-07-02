@@ -21,8 +21,8 @@ export default function ItemList({ items }) {
             >
               <Card.Body>
                 <Card.Title as="h6" className="mb-3"><strong>{item.name}</strong></Card.Title>
-                <p>Price: £{item.price}</p>
-                <p>Condition: {item.condition}</p>
+                <p><strong>Price:</strong> <i>£{item.price}</i></p>
+                <p><strong>Condition:</strong> <i>{item.condition}</i></p>
                 <Card.Img className="mt-2" variant="bottom" src={item.photosURL[0]} />
               </Card.Body>
             </Card>

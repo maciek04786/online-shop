@@ -1,18 +1,21 @@
 .item-list {
-    margin: 40px 40px 50px !important;
+    margin: 100px 40px 100px !important;
 }
 
-.item-list p {
-    font-size: 0.9em !important;
+.item-list {
+    font-size: 0.8em !important;
+    line-height: 0.9em;
 }
 
 .item-card {
-    background-color: #F0E9D2 !important;
+    border-width: 0 !important;
+    box-shadow: 5px 5px 5px;
+    background-color: #a7d6da !important;
     cursor: pointer;
 }
 
 .item-card:hover {
-    background-color: #E6DDC4 !important;
+    background-color: #9ec9ce !important;
 }
 
 .item-card img {

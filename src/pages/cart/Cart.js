@@ -11,14 +11,14 @@ export default function Cart() {
 
     // update total price
     useEffect(() => {
-    let total = 0
+        let total = 0
 
-    data.forEach((item) => {
-    total += parseFloat(item.price)
-    })
+        data.forEach((item) => {
+            total += parseFloat(item.price)
+        })
 
-    setTotalPrice(total)
-  }, [data])
+        setTotalPrice(total)
+    }, [data])
 
     return (
         <Container className="mt-5 cart-body shopping-cart">
@@ -26,20 +26,20 @@ export default function Cart() {
                 <h1 className="mb-4">Items in cart</h1>
                 {data && data.map((item) => (
                     <ListGroup.Item
-                    key={item.id}
-                    as="li"
-                    className="d-flex justify-content-between align-items-start"
+                        key={item.id}
+                        as="li"
+                        className="d-flex justify-content-between align-items-start"
                     >
-                    <div className="ms-2 me-auto">
-                        <div className="fw-bold">{item.name}</div>
-                        Price: £{item.price}
-                    </div>
-                    <Button
-                        className="mt-2"
-                        size="sm"
-                        variant="dark"
-                        onClick={() => deleteItem(item.id)}
-                    >X</Button>
+                        <div className="ms-2 me-auto">
+                            <div className="fw-bold">{item.name}</div>
+                            Price: £{item.price}
+                        </div>
+                        <Button
+                            className="mt-2"
+                            size="sm"
+                            variant="dark"
+                            onClick={() => deleteItem(item.id)}
+                        >X</Button>
                     </ListGroup.Item>
                 ))}
                 <ListGroup.Item className="my-4">
@@ -49,14 +49,14 @@ export default function Cart() {
             <Button
                 variant="dark"
             >Checkout</Button>
-            <Button 
-                variant="dark" 
-                href="/" 
+            <Button
+                variant="dark"
+                href="/"
                 className="me-1"
             >Back</Button>
             <Button
                 onClick={clearData}
-                variant="dark" 
+                variant="dark"
                 className="clear-btn"
             >Clear all</Button>
         </Container>
