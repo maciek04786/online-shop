@@ -6,20 +6,20 @@ import { getStorage } from "firebase/storage"
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCd0iUACWCErE012YuVxLqYQB-kkqNMbYE",
-  authDomain: "online-shop-21632.firebaseapp.com",
-  projectId: "online-shop-21632",
-  storageBucket: "online-shop-21632.appspot.com",
-  messagingSenderId: "891163753455",
-  appId: "1:891163753455:web:64b1d1bd6feee77399141a"
+  apiKey: "AIzaSyA2Bz9kTvn_50W0Us2srPGXh5SBw3NZGcM",
+  authDomain: "online-shop-3b115.firebaseapp.com",
+  projectId: "online-shop-3b115",
+  storageBucket: "online-shop-3b115.appspot.com",
+  messagingSenderId: "206557709679",
+  appId: "1:206557709679:web:35e04d492184f1a5a4d49a"
 };
 
 // Initialize Firebase
-initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
 
 // init services
-const db = getFirestore()
-const auth = getAuth()
-const storage = getStorage()
+const db = getFirestore(app)
+const auth = getAuth(app)
+const storage = getStorage(app)
 
 export { db, auth, storage }

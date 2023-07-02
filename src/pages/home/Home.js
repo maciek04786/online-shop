@@ -4,7 +4,7 @@ import ItemList from './ItemList'
 
 // styles & bootstrap
 import "./Home.css"
-import { Col, Container, Form, Image, Row } from 'react-bootstrap'
+import { Container, Form, Image } from 'react-bootstrap'
 
 export default function Home() {
   const [query, setQuery] = useState("")
