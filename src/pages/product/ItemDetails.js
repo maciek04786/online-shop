@@ -12,7 +12,7 @@ export default function ItemDetails({ item }) {
     const [show, setShow] = useState(false);
     const { user } = useAuthContext()
     const [showAddBtn, setShowAddBtn] = useState(true)
-    const [showRemoveBtn, setShowRemoveBtn] = useState(true)
+    const [showRemoveBtn, setShowRemoveBtn] = useState(false)
     const { data, addItem } = useLocalStorage("items")
     const { deleteDocument } = useFirestore("items")
     const { id } = useParams()
@@ -36,7 +36,7 @@ export default function ItemDetails({ item }) {
 
     // remove item from listing
     const handleRemove = () => {
-        if (window.confirm("Are you sure?")) {
+        if (window.confirm("Remove item from listing?")) {
             deleteDocument(id)
             nav(`/user/${user.uid}`)
         }
@@ -46,6 +46,9 @@ export default function ItemDetails({ item }) {
     - user not logged in
     - item already in cart
     - item sold by user */
+    /* Hiding "Remove Item" button if:
+    - user not logged in
+    - item not sold by user */
     useEffect(() => {
         if (!user) {
             setShowAddBtn(false)
@@ -65,14 +68,12 @@ export default function ItemDetails({ item }) {
         <Container className="item-details-card">
             <Card border="secondary">
                 <Card.Body>
-                    <Card.Title as="h3" className="mb-5">{item.name}</Card.Title>
                     <Row>
                         <Col>
-                            <p><strong>Price:</strong> <i>£{item.price}</i></p>
-                            <p><strong>Condition:</strong> <i>{item.condition}</i></p>
+                            <Card.Title as="h2" className="mb-5">{item.name}</Card.Title>
                         </Col>
-                        {showAddBtn && (
-                            <Col>
+                        <Col>
+                            {showAddBtn && (
                                 <Button
                                     className=""
                                     onClick={handleAdd}
@@ -80,19 +81,23 @@ export default function ItemDetails({ item }) {
                                 >
                                     Add to cart
                                 </Button>
-                            </Col>
-                        )}
-                        {showRemoveBtn && (
-                            <Col>
+                            )}
+                            {showRemoveBtn && (
                                 <Button
                                     className=""
                                     onClick={handleRemove}
                                     variant="dark"
                                 >
-                                    Remove from listing
+                                    Remove item
                                 </Button>
-                            </Col>
-                        )}
+                            )}
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col>
+                            <p><strong>Price:</strong> <i>£{item.price}</i></p>
+                            <p><strong>Condition:</strong> <i>{item.condition}</i></p>
+                        </Col>
                     </Row>
                     <Row>
                         <Col>
@@ -121,7 +126,6 @@ export default function ItemDetails({ item }) {
                     <Button variant="secondary" onClick={handleClose}>
                         Close
                     </Button>
-                    <Button variant="primary" href="/cart" />
                 </Modal.Footer>
             </Modal>
         </Container>

@@ -8,9 +8,10 @@ import { useAuthContext } from '../../hooks/useAuthContext'
 
 // styles & bootstrap
 import "./Sell.css"
-import { Button, Card, Form,
-     Row, Col, Spinner, InputGroup
-        } from 'react-bootstrap'
+import {
+    Button, Card, Form,
+    Row, Col, Spinner, InputGroup
+} from 'react-bootstrap'
 
 export default function Sell() {
 
@@ -78,13 +79,13 @@ export default function Sell() {
                     .catch((err) => {
                         console.log(err)
                     })
-            } catch(err) {
+            } catch (err) {
                 console.log(err)
                 setUploadError("Could not upload photos")
             }
         }))
 
-        // add item doc to firebase database
+        // add item doc to firebase db
         const newDoc = {
             localStorageID: uuid(),
             name,
@@ -106,13 +107,13 @@ export default function Sell() {
                 <Card.Title className="mb-4" as="h3">
                     What would you like to sell?
                 </Card.Title>
-                    <Form onSubmit={handleSubmit}>
+                <Form onSubmit={handleSubmit}>
                     <Form.Group className="mb-4">
                         <Form.Label>How would you name it?</Form.Label>
-                        <Form.Control 
+                        <Form.Control
                             required
-                            type="text" 
-                            placeholder="Name item" 
+                            type="text"
+                            placeholder="Name item"
                             onChange={(e) => setName(e.target.value)}
                         />
                     </Form.Group>
@@ -122,7 +123,7 @@ export default function Sell() {
                                 <Form.Label>Select condition of the item</Form.Label>
                             </Col>
                             <Col sm={6}>
-                                <Form.Select 
+                                <Form.Select
                                     required
                                     aria-label="Default select example"
                                     onChange={(e) => setCondition(e.target.value)}
@@ -130,10 +131,10 @@ export default function Sell() {
                                     <option>Choose condition</option>
                                     <option value="New">New</option>
                                     <option value="Used">Used</option>
-                                    <option 
-                                        value="For parts or not working"
+                                    <option
+                                        value="For parts"
                                     >
-                                        For parts or not working
+                                        For parts
                                     </option>
                                 </Form.Select>
                             </Col>
@@ -141,11 +142,11 @@ export default function Sell() {
                     </Form.Group>
                     <Form.Group className="mb-4">
                         <Form.Label>Describe the item</Form.Label>
-                        <Form.Control 
+                        <Form.Control
                             required
-                            as="textarea" 
-                            rows={5} 
-                            placeholder="Try to include as many details as possible" 
+                            as="textarea"
+                            rows={5}
+                            placeholder="Try to include as many details as possible"
                             onChange={(e) => setDescription(e.target.value)}
                         />
                     </Form.Group>
@@ -156,7 +157,7 @@ export default function Sell() {
                             </Col>
                             <Col sm={4}>
                                 <InputGroup>
-                                <InputGroup.Text>£</InputGroup.Text>
+                                    <InputGroup.Text>£</InputGroup.Text>
                                     <Form.Control className="price-input"
                                         type="number"
                                         min="0.01"
@@ -173,7 +174,7 @@ export default function Sell() {
                         <Form.Control
                             required
                             type="file"
-                            multiple 
+                            multiple
                             onChange={handleFileChange}
                         />
                     </Form.Group>

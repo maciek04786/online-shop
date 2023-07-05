@@ -11,9 +11,9 @@ export default function ItemList({ items }) {
   return (
     <Container className="item-list">
       {!items && <p>No items to show</p>}
-      <Row xs={2} md={3} lg={4} xl={5} xxl={6} className="g-4">
+      <Row xs={1} sm={3} md={4} lg={5} className="g-4">
         {items && (items.map((item) => (
-          <Col key={item.id}>
+          <Col key={item.id} className="mx-3">
             <Card
               onClick={() => navigate(`/item/${item.id}`)}
               border="light"
@@ -23,7 +23,7 @@ export default function ItemList({ items }) {
                 <Card.Title as="h6" className="mb-3"><strong>{item.name}</strong></Card.Title>
                 <p><strong>Price:</strong> <i>£{item.price}</i></p>
                 <p><strong>Condition:</strong> <i>{item.condition}</i></p>
-                <Card.Img className="mt-2" variant="bottom" src={item.photosURL[0]} />
+                <Card.Img className="mt-1" variant="bottom" src={item.photosURL[0]} />
               </Card.Body>
             </Card>
           </Col>

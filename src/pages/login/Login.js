@@ -17,17 +17,17 @@ export default function Login() {
 
   return (
     <div>
-        <Card className="login-form">
-          <Card.Body>
-            <Card.Title as="h3">Login</Card.Title>
-            <Form className="mt-4" onSubmit={handleSubmit}>
+      <Card className="login-form">
+        <Card.Body>
+          <Card.Title as="h3">Login</Card.Title>
+          <Form className="mt-4" onSubmit={handleSubmit}>
             <Form.Group className="mb-3">
               <Form.Label>Email address</Form.Label>
-              <Form.Control 
+              <Form.Control
                 onChange={(e) => setEmail(e.target.value)}
                 type="email"
                 value={email}
-                placeholder="Enter email" 
+                placeholder="Enter email"
               />
             </Form.Group>
             <Form.Group className="mb-3">
@@ -35,8 +35,8 @@ export default function Login() {
               <Form.Control
                 onChange={(e) => setPassword(e.target.value)}
                 value={password}
-                type="password" 
-                placeholder="Enter password" 
+                type="password"
+                placeholder="Enter password"
               />
             </Form.Group>
             {isPending ? (
@@ -48,8 +48,8 @@ export default function Login() {
             )}
             {error && <div className="error">{error}</div>}
           </Form>
-          </Card.Body>
-        </Card>
+        </Card.Body>
+      </Card>
     </div>
   )
 }

@@ -25,7 +25,7 @@ export default function MyNavbar() {
 
   return (
     <Navbar key={"md"} variant="dark" expand={"md"}>
-      <Container fluid className="mx-5">
+      <Container>
         <Navbar.Brand href="/">sellAnything.com</Navbar.Brand>
         <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${"md"}`} />
         <Navbar.Offcanvas
@@ -55,14 +55,10 @@ export default function MyNavbar() {
                     title="My Account"
                     id={`offcanvasNavbarDropdown-expand-${"md"}`}
                   >
-                    <NavDropdown.Item href={`/user/${user.uid}`}>
-                      Dashboard
-                    </NavDropdown.Item>
+                    <NavDropdown.Item href={`/user/${user.uid}`}>My Items</NavDropdown.Item>
                     <NavDropdown.Item href="/sell">Sell</NavDropdown.Item>
                     <NavDropdown.Divider />
-                    <NavDropdown.Item onClick={clickLogout}>
-                      Logout
-                    </NavDropdown.Item>
+                    <NavDropdown.Item onClick={clickLogout}>Logout</NavDropdown.Item>
                   </NavDropdown>
                 </>
               )}
@@ -70,7 +66,6 @@ export default function MyNavbar() {
           </Offcanvas.Body>
         </Navbar.Offcanvas>
         <Button
-          className="ms-4"
           variant="dark"
           href="/cart"
         ><Cart4 color="white" /></Button>

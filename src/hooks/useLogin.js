@@ -7,7 +7,7 @@ import { signInWithEmailAndPassword } from "firebase/auth"
 
 export const useLogin = () => {
     const [error, setError] = useState(null)
-    const [isPending, setIsPending]= useState(false)
+    const [isPending, setIsPending] = useState(false)
     const { dispatch } = useAuthContext()
 
     const login = async (email, password) => {
@@ -15,17 +15,17 @@ export const useLogin = () => {
         setIsPending(true)
 
         signInWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
+            .then((userCredential) => {
 
-            // Signed in 
-            const user = userCredential.user;
-            dispatch({ type: "LOGIN", payload: user })
-        })
-        .catch((err) => {
-            console.log(err)
-            setError(err.message)
-            setIsPending(false)
-        })
+                // Signed in 
+                const user = userCredential.user;
+                dispatch({ type: "LOGIN", payload: user })
+            })
+            .catch((error) => {
+                console.log(error)
+                setError(error.message)
+                setIsPending(false)
+            })
     }
 
     return { login, error, isPending }

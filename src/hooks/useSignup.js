@@ -26,25 +26,26 @@ export const useSignup = () => {
         updateProfile(userCredentials.user, { displayName })
 
         addDocument({
-        displayName,
-        notifications: []
-      }, userCredentials.user.uid)
+          displayName,
+          notifications: []
+        }, userCredentials.user.uid)
 
-      dispatch({ type: "LOGIN", payload: userCredentials.user })
+        dispatch({ type: "LOGIN", payload: userCredentials.user })
       })
       .catch((error) => {
         setError(error.message)
         console.log(error)
+        setIsPending(false)
       })
 
-      if (!isCancelled) {
-          setIsPending(false)
-          setError(null)
-      }
+    if (!isCancelled) {
+      setIsPending(false)
+      setError(null)
+    }
   }
 
   useEffect(() => {
-      return () => setIsCancelled(true)
+    return () => setIsCancelled(true)
   }, [])
 
   return { error, isPending, signup }

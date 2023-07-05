@@ -9,6 +9,12 @@ export default function Cart() {
     const [totalPrice, setTotalPrice] = useState(0)
     const { data, deleteItem, clearData } = useLocalStorage("items")
 
+    // format total price
+    let pounds = new Intl.NumberFormat("en-GB", {
+        style: "currency",
+        currency: "GBP",
+    })
+
     // update total price
     useEffect(() => {
         let total = 0
@@ -43,7 +49,7 @@ export default function Cart() {
                     </ListGroup.Item>
                 ))}
                 <ListGroup.Item className="my-4">
-                    <h3>Total: £{totalPrice}</h3>
+                    <h3>Total: {pounds.format(totalPrice)}</h3>
                 </ListGroup.Item>
             </ListGroup>
             <Button

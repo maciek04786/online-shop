@@ -1,5 +1,6 @@
 .item-details-card {
-    margin: 7% auto;
+    line-height: 1.2em;
+    margin: 15% auto;
     max-width: 900px !important;
 }
 
