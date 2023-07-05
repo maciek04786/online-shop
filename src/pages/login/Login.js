@@ -3,9 +3,10 @@ import { useLogin } from '../../hooks/useLogin'
 
 // styles & bootstrap
 import "./Login.css"
-import { Card, Form, Button, Spinner } from 'react-bootstrap'
+import { Card, Form, Button, Spinner, Modal } from 'react-bootstrap'
 
 export default function Login() {
+  const [showModal, setShowModal] = useState(true)
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const { login, error, isPending } = useLogin()
@@ -14,6 +15,8 @@ export default function Login() {
     e.preventDefault()
     login(email, password)
   }
+
+  const handleClose = () => setShowModal(false);
 
   return (
     <div>
@@ -50,6 +53,20 @@ export default function Login() {
           </Form>
         </Card.Body>
       </Card>
+      <Modal show={showModal} onHide={handleClose}>
+        <Modal.Header closeButton>
+        </Modal.Header>
+        <Modal.Body>
+          <h5 className="mb-3">Test login:</h5>
+          <p className="mb-0">email: test@email.com</p>
+          <p>password: 123456</p>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </div>
   )
 }
